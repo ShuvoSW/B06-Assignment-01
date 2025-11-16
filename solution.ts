@@ -9,4 +9,11 @@ const formatValue = (value: string | number | boolean) => {
     }
 }
 
-formatValue('hello');
+
+
+const getLength = (value: string) => {
+
+    return (value.length);
+}
+
+
