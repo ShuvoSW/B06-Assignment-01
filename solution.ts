@@ -12,8 +12,11 @@ const formatValue = (value: string | number | boolean) => {
 
 
 const getLength = (value: string) => {
-
-    return (value.length);
+    
+    if (typeof value === "string") {
+        return (value.length);
+    }
 }
 
+console.log(getLength('typescript'));
 
