@@ -46,12 +46,16 @@ person2.getDetails();
 
 
 
-const filterByRating = (arrOfObj: []) => {
-    
-    let arr = 0
-    if (arrOfItems.number <= 4) {
-        return arr.push[...arrOfItems]
-    }
+const filterByRating = (arrOfObj: object) => {
+
+    Map.forEach(arrOfObj => {
+        console.log
+    });
+    // return arrOfObj.object.split("")
+    // let arr = 0
+    // if (arrOfItems.number <= 4) {
+    //     return arr.push[...arrOfItems]
+    // }
 }
 
 const books = [
