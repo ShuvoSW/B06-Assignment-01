@@ -43,3 +43,21 @@ person1.getDetails();
 
 const person2 = new Person('Alice', 25);
 person2.getDetails();
+
+
+
+const filterByRating = (arrOfObj: []) => {
+    
+    let arr = 0
+    if (arrOfItems.number <= 4) {
+        return arr.push[...arrOfItems]
+    }
+}
+
+const books = [
+  { title: 'Book A', rating: 4.5 },
+  { title: 'Book B', rating: 3.2 },
+  { title: 'Book C', rating: 5.0 },
+];
+
+console.log(filterByRating(books));
