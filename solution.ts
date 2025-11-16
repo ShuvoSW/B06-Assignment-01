@@ -1,9 +1,12 @@
 const formatValue = (value: string | number | boolean) => {
+
     if (typeof value === "string") {
-        return value.toUpperCase() ;
+        return (value.toUpperCase());
     } else if (typeof value === "number") {
-        return value * 10 ;
+        return (value * 10);
+    } else {
+        return (!value);
     }
 }
 
-console.log(formatValue(2))
+formatValue('hello');
