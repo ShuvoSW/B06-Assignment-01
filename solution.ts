@@ -103,8 +103,16 @@ type Product = {
 function calculateTotalPrice(products: Product[]): number {
     let total = 0;
     products.map(i => {
-        const { price, quantity } = i;
-        total += price * quantity
+        const { price, quantity, discount } = i;
+        
+        if (typeof discount === "number") {
+        let a = price-(price / discount)
+        total += a * quantity
+        console.log(total)
+        } else {
+            total += price*quantity
+            console.log(total)
+        }
     }
 
     )
