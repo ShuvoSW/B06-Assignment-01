@@ -1,4 +1,5 @@
-const formatValue = (value: string | number | boolean) => {
+function formatValue(value: string | number | boolean):  
+string | number | boolean {
 
     if (typeof value === "string") {
         return (value.toUpperCase());
@@ -9,17 +10,16 @@ const formatValue = (value: string | number | boolean) => {
     }
 }
 
-formatValue("hello");
 
 
-const getLength = (value: string) => {
+function getLength(value: string | unknown[]): number {
     
-    if (typeof value === "string") {
+    if (typeof value === "string" || Array.isArray(value)) {
         return (value.length);
     }
+    throw new Error("Invalid type");
 }
 
-getLength('typescript');
 
 
 class Person {
@@ -33,46 +33,30 @@ class Person {
 
     }
 
-    getDetails() {
+    getDetails(): string {
         return (`'Name: ${this.name}, Age: ${this.age}'`)
     }
 }
 
-const person1 = new Person('John Doe', 30);
-person1.getDetails();
-
-const person2 = new Person('Alice', 25);
-person2.getDetails();
 
 
+type Item = {
+    title: string;
+    rating: number;
+}
 
-// const filterByRating = (users: object[]) => {
+function filterByRating(items: readonly Item[]): Item[] {
 
-//     users.filter(i => { 
-//         // console.log(i.rating )
-//         // if (i.rating <= 4) {
-//         //     return arr=push[i.rating];
-//         // }
-   
-//     });
-//     // return arrOfObj.object.split("")
-//     // let arr = 0
-//     // if (arrOfItems.number <= 4) {
-//     //     return arr.push[...arrOfItems]
-//     // }
-// }
-
-// const books = [
-//   { title: 'Book A', rating: 4.5 },
-//   { title: 'Book B', rating: 3.2 },
-//   { title: 'Book C', rating: 5.0 },
-// ];
-
-// console.log(filterByRating(books));
+    return items.filter((item) => item.rating >= 4);
+}
 
 
 
-// const filterActiveUsers = (user: object[]) => {
+
+
+
+
+// function filterActiveUsers(user: object[]) {
 
 //     // user.forEach(element => {
 //     //     console.log(element)
@@ -101,11 +85,6 @@ person2.getDetails();
 
 // console.log(filterActiveUsers(users));
 
-// const topElectronicProducts = rawApiData.filter((item) => item.category == "Electronics")
-// .sort((a, b) => b.rating -a.rating)
-// .slice(0, 3)
-// .map((item) => ({name: item.productName}
-
 
 
 interface Book {
@@ -115,7 +94,7 @@ interface Book {
     isAvailable: boolean;
 }
 
-const printBookDetails = (user: Book) => {
+function printBookDetails(user: Book) {
 
     const {title, author, publishedYear, isAvailable} = user;
 
@@ -129,4 +108,31 @@ const myBook: Book = {
   isAvailable: true,
 };
 
-console.log(printBookDetails(myBook))
+printBookDetails(myBook)
+
+
+
+// function getUniqueValues(array1: [], array2: []) {
+
+//     let arr = array1.indexOf |  array2;
+//     return arr;
+
+// }
+
+// const array1 = [1, 2, 3, 4, 5];
+// const array2 = [3, 4, 5, 6, 7];
+// console.log(getUniqueValues(array1, array2));
+
+
+
+// function calculateTotalPrice(products: object[]) {
+
+// }
+
+// const products = [
+//   { name: 'Pen', price: 10, quantity: 2 },
+//   { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
+//   { name: 'Bag', price: 50, quantity: 1, discount: 20 },
+// ];
+
+// console.log(calculateTotalPrice(products));
