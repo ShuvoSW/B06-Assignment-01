@@ -80,16 +80,16 @@ function printBookDetails(user: Book): void {
 
 
 
-// function getUniqueValues(array1: [], array2: []) {
+function getUniqueValues(array1: [], array2: []) {
 
-//     let arr = array1.indexOf |  array2;
-//     return arr;
+    let arr = array1.indexOf |  array2;
+    return arr;
 
-// }
+}
 
-// const array1 = [1, 2, 3, 4, 5];
-// const array2 = [3, 4, 5, 6, 7];
-// console.log(getUniqueValues(array1, array2));
+const array1 = [1, 2, 3, 4, 5];
+const array2 = [3, 4, 5, 6, 7];
+console.log(getUniqueValues(array1, array2));
 
 
 
