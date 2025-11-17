@@ -62,14 +62,6 @@ function filterActiveUsers(users: User[]): User[] {
     return users.filter(i => i.isActive === true);
 }
 
-const users = [
-  { id: 1, name: 'Rakib', email: 'rakib@example.com', isActive: true },
-  { id: 2, name: 'Asha', email: 'asha@example.com', isActive: false },
-  { id: 3, name: 'Rumi', email: 'rumi@example.com', isActive: true },
-];
-
-console.log(filterActiveUsers(users));
-
 
 
 interface Book {
@@ -101,14 +93,22 @@ function printBookDetails(user: Book): void {
 
 
 
-// function calculateTotalPrice(products: object[]) {
+type Product = {
+    name: string;
+    price: number;
+    quantity: number;
+    discount?: number;
+}
 
-// }
+function calculateTotalPrice(products: Product[]): number {
+    products.filter(i => )
 
-// const products = [
-//   { name: 'Pen', price: 10, quantity: 2 },
-//   { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
-//   { name: 'Bag', price: 50, quantity: 1, discount: 20 },
-// ];
+}
 
-// console.log(calculateTotalPrice(products));
+const products = [
+  { name: 'Pen', price: 10, quantity: 2 },
+  { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
+  { name: 'Bag', price: 50, quantity: 1, discount: 20 },
+];
+
+console.log(calculateTotalPrice(products));
