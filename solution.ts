@@ -52,38 +52,23 @@ function filterByRating(items: readonly Item[]): Item[] {
 
 
 
-
-
-
-
-// function filterActiveUsers(user: object[]) {
-
-//     // user.forEach(element => {
-//     //     console.log(element)
-//     // });
-// //     user.forEach(( key, value) =>
-// //         //  console.log("Key: ", key, "Value: ", value)
-// //     if (value.split === true)
+type User = {
+    id: number;
+    name: string;
+    email: string;
+    isActive: boolean;
+}
+function filterActiveUsers(users: User[]): User[] {    
     
-// // );
-//    let arr = 0
-//     user.filter((i) =>  
-//         // console.log(i.isActive)
-//         if (i.isActive === "True") {
-//             return i.push = arr
-//         }
-// )
+}
 
+const users = [
+  { id: 1, name: 'Rakib', email: 'rakib@example.com', isActive: true },
+  { id: 2, name: 'Asha', email: 'asha@example.com', isActive: false },
+  { id: 3, name: 'Rumi', email: 'rumi@example.com', isActive: true },
+];
 
-// }
-
-// const users = [
-//   { id: 1, name: 'Rakib', email: 'rakib@example.com', isActive: true },
-//   { id: 2, name: 'Asha', email: 'asha@example.com', isActive: false },
-//   { id: 3, name: 'Rumi', email: 'rumi@example.com', isActive: true },
-// ];
-
-// console.log(filterActiveUsers(users));
+console.log(filterActiveUsers(users));
 
 
 
@@ -94,21 +79,12 @@ interface Book {
     isAvailable: boolean;
 }
 
-function printBookDetails(user: Book) {
+function printBookDetails(user: Book): void {
 
     const {title, author, publishedYear, isAvailable} = user;
 
-    return (`Title: ${title}, Author: ${author}, Published: ${publishedYear}, Available: ${isAvailable}`)
+    console.log(`Title: ${title}, Author: ${author}, Published: ${publishedYear}, Available: ${isAvailable}`)
 }
-
-const myBook: Book = {
-  title: 'The Great Gatsby',
-  author: 'F. Scott Fitzgerald',
-  publishedYear: 1925,
-  isAvailable: true,
-};
-
-printBookDetails(myBook)
 
 
 
