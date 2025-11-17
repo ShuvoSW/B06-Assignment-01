@@ -1,5 +1,5 @@
-function formatValue(value: string | number | boolean):  
-string | number | boolean {
+function formatValue(value: string | number | boolean):
+    string | number | boolean {
 
     if (typeof value === "string") {
         return (value.toUpperCase());
@@ -13,7 +13,7 @@ string | number | boolean {
 
 
 function getLength(value: string | unknown[]): number {
-    
+
     if (typeof value === "string" || Array.isArray(value)) {
         return (value.length);
     }
@@ -58,7 +58,7 @@ type User = {
     email: string;
     isActive: boolean;
 }
-function filterActiveUsers(users: User[]): User[] {    
+function filterActiveUsers(users: User[]): User[] {
     return users.filter(i => i.isActive === true);
 }
 
@@ -73,7 +73,7 @@ interface Book {
 
 function printBookDetails(user: Book): void {
 
-    const {title, author, publishedYear, isAvailable} = user;
+    const { title, author, publishedYear, isAvailable } = user;
 
     console.log(`Title: ${title}, Author: ${author}, Published: ${publishedYear}, Available: ${isAvailable}`)
 }
@@ -101,14 +101,20 @@ type Product = {
 }
 
 function calculateTotalPrice(products: Product[]): number {
-    products.filter(i => )
+    let total = 0;
+    products.map(i => {
+        const { price, quantity } = i;
+        total += price * quantity
+    }
+
+    )
 
 }
 
 const products = [
-  { name: 'Pen', price: 10, quantity: 2 },
-  { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
-  { name: 'Bag', price: 50, quantity: 1, discount: 20 },
+    { name: 'Pen', price: 10, quantity: 2 },
+    { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
+    { name: 'Bag', price: 50, quantity: 1, discount: 20 },
 ];
 
 console.log(calculateTotalPrice(products));
