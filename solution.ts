@@ -117,7 +117,9 @@ interface Book {
 
 const printBookDetails = (user: Book) => {
 
-    
+    const {title, author, publishedYear, isAvailable} = user;
+
+    return (`Title: ${title}, Author: ${author}, Published: ${publishedYear}, Available: ${isAvailable}`)
 }
 
 const myBook: Book = {
