@@ -59,7 +59,7 @@ type User = {
     isActive: boolean;
 }
 function filterActiveUsers(users: User[]): User[] {    
-    
+    return users.filter(i => i.isActive === true);
 }
 
 const users = [
