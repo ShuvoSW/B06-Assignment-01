@@ -80,11 +80,31 @@ function printBookDetails(user: Book): void {
 
 
 
-function getUniqueValues(array1: [], array2: []) {
+function getUniqueValues<T extends string | number>(array1: T[], array2: T[]): T[] {
+    const result: T[] = []
 
-    let arr = array1.indexOf |  array2;
-    return arr;
+    const seen: {
+        [key: string]: boolean;
+    } = {};
 
+    for (let i = 0; i < array1.length; i++) {
+        const key = String(array1[i]);
+        if (!seen[key]) {
+            seen[key] = true;
+            result[result.length] = array1[i];
+        }
+
+    }
+
+    for (let i = 0; i < array2.length; i++) {
+        const key = String(array2[i])
+        if (!seen[key]) {
+            seen[key] = true;
+            result[result.length] = array2[i]
+        }
+    }
+    
+    return result;
 }
 
 const array1 = [1, 2, 3, 4, 5];
@@ -100,29 +120,14 @@ type Product = {
     discount?: number;
 }
 
-function calculateTotalPrice(products: Product[]): number {
-    let total = 0;
-    products.map(i => {
-        const { price, quantity, discount } = i;
-        
-        if (typeof discount === "number") {
-        let a = price-(price / discount)
-        total += a * quantity
-        console.log(total)
-        } else {
-            total += price*quantity
-            console.log(total)
-        }
+function calculateTotalPrice(products: Product[]) {
+    if (products.length === 0) {
+        return 0;
     }
+    return products.map((product) => {
+        const totalAmount = product.price * product.quantity;
+        const discountAmount = product.discount ? (totalAmount * product.discount) / 100 : 0;
+        return totalAmount - discountAmount;
+    }).reduce((sum, value) => sum + value, 0);
 
-    )
-    return (total);
 }
-
-const products = [
-    { name: 'Pen', price: 10, quantity: 2 },
-    { name: 'Notebook', price: 25, quantity: 3, discount: 10 },
-    { name: 'Bag', price: 50, quantity: 1, discount: 20 },
-];
-
-console.log(calculateTotalPrice(products));
